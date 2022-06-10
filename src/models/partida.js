@@ -6,4 +6,5 @@ export class partida {
     mundosCompletados;
     elementosAgarrados;
     Gano;
+    idJugador;
 }
