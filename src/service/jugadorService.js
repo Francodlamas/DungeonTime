@@ -49,12 +49,12 @@ export class jugadorService {
 
         const pool = await sql.connect(config);
         const response = await pool.request()
-            .input('Id',sql.Int, Jugador?.Id ?? 0)
+            .input('Id',sql.Int, Id ?? 0)
             .input('Nombre',sql.NChar, Jugador?.Nombre ?? '')
             .input('Email',sql.NChar, Jugador?.Email ?? '')
             .input('Edad',sql.Int, Jugador?.Edad ?? 0)
             .query(`UPDATE ${jugadorTabla} SET Nombre = @Nombre,
-            Email = @Email, Edad = @Edad, where Id = @Id`);
+            Email = @Email, Edad = @Edad WHERE Id = @Id`);
         console.log(response)
 
         return response.recordset;
