@@ -67,13 +67,13 @@ export class partidaService {
         const response = await pool.request()
             .input('id',sql.Int, id ?? 0)
             .input('MounstrosMatados',sql.Int, partida?.MounstrosMatados ?? 0)
-            .input('EscenariosCompletados',sql.Int, partida?.escenariosCompletados ?? 0)
-            .input('BossesMatados',sql.Int, partida?.bossesMatados ?? 0)
-            .input('MundosCompletados',sql.Int, partida?.mundosCompletados ?? 0)
-            .input('ElementosAgarrados',sql.Int, partida?.elementosAgarrados ?? 0)
+            .input('EscenariosCompletados',sql.Int, partida?.EscenariosCompletados ?? 0)
+            .input('BossesMatados',sql.Int, partida?.BossesMatados ?? 0)
+            .input('MundosCompletados',sql.Int, partida?.MundosCompletados ?? 0)
+            .input('ElementosAgarrados',sql.Int, partida?.ElementosAgarrados ?? 0)
             .input('Gano',sql.Bit, partida?.Gano ?? 'false')
             .query(`UPDATE ${partidasTabla} SET MounstrosMatados = @MounstrosMatados,
-             EscenariosCompletados = @EscenariosCompletados, BossesMatados = @BossesMatados,
+            EscenariosCompletados = @EscenariosCompletados, BossesMatados = @BossesMatados,
               MundosCompletados = @MundosCompletados, ElementosAgarrados = @ElementosAgarrados,
               Gano=@Gano where id = @id`);
         console.log(response)

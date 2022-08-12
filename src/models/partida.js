@@ -1,10 +1,10 @@
 export class partida {
     id;
     MounstrosMatados;
-    escenariosCompletados;
-    bossesMatados;
-    mundosCompletados;
-    elementosAgarrados;
+    EscenariosCompletados;
+    BossesMatados;
+    MundosCompletados;
+    ElementosAgarrados;
     Gano;
     idJugador;
 }

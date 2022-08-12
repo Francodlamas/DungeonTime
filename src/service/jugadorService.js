@@ -1,6 +1,7 @@
 import sql from 'mssql'
 import config from '../../db.js'
 import 'dotenv/config'
+import { partida } from '../models/partida.js';
 
 
 const jugadorTabla= process.env.DB_TABLA_JUGADOR;
@@ -46,7 +47,7 @@ export class jugadorService {
     }
     updateJugadorById = async (Id,Jugador) => {
         console.log('This is a function on the service');
-
+       
         const pool = await sql.connect(config);
         const response = await pool.request()
             .input('Id',sql.Int, Id ?? 0)
